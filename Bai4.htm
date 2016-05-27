@@ -1,0 +1,42 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" charset="UTF-8"/>
+	<meta name="author" content="GallerySoft.info" />
+
+	<title>trainee003_Bai4</title>
+</head>
+
+<body>
+<script>
+    function drawTriangle() {
+        var html = "";
+        var number = document.getElementById('numb').value;
+        if (isNaN(number) == true || parseInt(number) != parseFloat(number) || number <= 0) {
+            alert("Bạn cần nhập vào một số nguyên dương! Vui lòng nhập lại!");
+        }else {
+            for (var i = 1; i <= number; i++) {
+                for (var j = i; j >= 1; j--) {
+                    var k = j%10;
+                    html += k +" ";
+                }
+                html += "<br>";
+            }
+        }
+        document.getElementById("showTriagle").innerHTML = html;
+    }
+
+
+
+    var bai4 = '<h1>Bài 4: In ra tam giác</h1><br>'
+        +'<input type ="text" id = "numb" placeholder="Nhập số nguyên dương">'
+        + '<input type = "button" value = "Ve tam giac" onclick = "drawTriangle()">'
+        + '<div id = "showTriagle"></div>'
+        
+    
+    document.write(bai4)
+</script>
+
+
+</body>
+</html>

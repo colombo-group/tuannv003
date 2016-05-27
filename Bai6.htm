@@ -1,0 +1,60 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" charset="UTF-8" />
+	<meta name="author" content="GallerySoft.info" />
+
+	<title>trainee003_bai6</title>
+</head>
+
+<body>
+    <script>
+        function getValueA() {
+            return document.getElementById("valueA").value;
+        }
+        
+        function getValueB() {
+            return document.getElementById("valueB").value;
+        }
+        
+        function add(a, b) {
+            return parseFloat(a) + parseFloat(b);
+        }
+        
+        function sub(a, b) {
+            return parseFloat(a) - parseFloat(b);
+        }
+        
+        function mul(a, b) {
+            return parseFloat(a) * parseFloat(b);
+        }
+        
+        function div(a, b) {
+            return parseFloat(a) / parseFloat(b);
+        }
+        
+        function exp(a, b) {
+            return Math.pow(parseFloat(a), parseFloat(b));
+        }
+        
+        function setResult(valueAssign) {
+            document.getElementById("result").value = valueAssign;
+        }
+    
+        var bai6 = '<h1>Chương trình máy tính điện tử</h1><br>'
+            + '<input type = "text" id = "valueA" placeholder = "Nhập số">'
+            + '<input type = "button" id = "add" value = " + " onclick = "setResult(add(getValueA(), getValueB()))">'
+            + '<input type = "button" id = "sub" value = " - " onclick = "setResult(sub(getValueA(), getValueB()))">'
+            + '<input type = "button" id = "mul" value = " * " onclick = "setResult(mul(getValueA(), getValueB()))">'
+            + '<input type = "button" id = "div" value = " / " onclick = "setResult(div(getValueA(), getValueB()))">'
+            + '<input type = "button" id = "exp" value = " ^ " onclick = "setResult(exp(getValueA(), getValueB()))">'
+            + '<input type = "text" id = "valueB" placeholder = "Nhập số">'
+            + " = "
+            + '<input type = "text" id = "result" disabled = "disabled" placeholder = "Kết quả">';
+        
+        document.write(bai6);
+    </script>
+
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" charset ="UTF-8"/>
+	<meta name="author" content="GallerySoft.info" />
+
+	<title>trainee003_bai3</title>
+</head>
+
+<body>
+    <script>
+        var time;
+		var m = 0;
+		var s = 0;
+		var ms = 0;
+        function run () {
+            if (ms == 9) {
+                if (s == 59) {
+                    s = 0;
+                    m++;
+                    ms = 0;
+                }
+                else {
+                    s++;
+                    ms = 0;
+                }
+            }
+            else {
+                ms++;
+            }
+            
+            if (s < 10) {
+                document.getElementById("second").innerHTML = '0' + s;
+            }else {
+                document.getElementById("second").innerHTML = s;
+            }
+            if (m < 10) {
+                document.getElementById("minute").innerHTML = '0' + m;
+            }else {
+                document.getElementById("minute").innerHTML = m;
+            }
+            document.getElementById("msecond").innerHTML = ms;
+        }
+        
+        function start() {
+            var ms = 0;
+			time = setInterval(function() {
+		    	 run() }, 100	
+		);
+			document.getElementById('start').disabled = true;
+			document.getElementById('pause').disabled = false;
+        }
+        
+        function pause() {
+            clearInterval(time);
+            document.getElementById('start').disabled = false;
+            document.getElementById('start').value = "Tiếp tục";
+            document.getElementById('pause').disable = true;  
+        }
+        
+        function reset() {
+            clearInterval(time);
+            m = 0;
+			s = 0;
+			ms = 0;
+            document.getElementById("msecond").innerHTML = ms;
+            document.getElementById("second").innerHTML = '0' + s;
+            document.getElementById("minute").innerHTML = '0' + m;
+            document.getElementById("start").disabled = false;
+            document.getElementById("start").value = "Bắt đầu";
+            document.getElementById("pause").disabled = true;
+            
+        }
+    
+        var body = '<h1>Bài 3: Đồng hồ thể thao bấm giây'
+            +  '<div>'
+                + '<div>'
+                + '<span id = "minute" >00</span>'
+                + '<span>:</span>'
+                + '<span id = "second" >00</span>'
+                + '<span>.</span>'
+                + '<span id = "msecond">0</span>'
+                + '</div>'
+                + '<input type = "button" id = "start" value = "Bắt đầu" onclick = "start()">'
+                + '<input type = "button" id = "pause" value = "Tạm dừng" onclick = "pause()">'
+                + '<input type = "button" id = "reset" value = "Reset" onclick = "reset()">'
+            + '</div>';
+        document.write(body);
+    </script>
+
+
+</body>
+</html>

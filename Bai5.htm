@@ -1,0 +1,47 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+	<meta http-equiv="content-type" content="text/html" charset ="UTF-8"/>
+	<meta name="author" content="GallerySoft.info" />
+    <style >
+        div {
+            text-align: center;
+        }
+    </style>
+	<title>trainee003_Bai5</title>
+</head>
+
+<body>
+    <script>
+        function drawTriangle() {
+            var html = "";
+            var number = document.getElementById('numb').value;
+            if (isNaN(number) == true || parseInt(number) != parseFloat(number) || number <= 0) {
+                alert("Bạn cần nhập vào một số nguyên dương! Vui lòng nhập lại!");
+            }else {
+                for (var i = 1; i <= number; i++) {
+                    for (var j = i; j > i/2; j--) {
+                        var x = j % 10; 
+                        html += x + " ";
+                    }
+                    for (var k = Math.ceil(i/2) + 1; k <= i; k++) {
+                        var y = k % 10; 
+                        html += y + " ";
+                    }
+                    html += "<br>";
+                }
+            }
+            document.getElementById("output").innerHTML = html;
+        }
+
+        
+        var bai5 = '<div><h1>Bài 5: Vẽ tam giác theo quy luật</h1>'
+            + '<input type = "text" id = "numb" placeholder="Nhập số nguyên dương">'
+            + '<input type = "button" value ="Ve tam giac" onclick = "drawTriangle()">'
+            + '<div id = "output" ></div>'
+            + '</div>';
+            
+        document.write(bai5);
+    </script>
+</body>
+</html>
